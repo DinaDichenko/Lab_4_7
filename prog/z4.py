@@ -10,10 +10,11 @@
 """
 from tkinter import *
 
+
 def open_file():
     try:
         name = ent.get()
-        with open(name, 'r', encoding='utf-8') as f:
+        with open(name, "r", encoding="utf-8") as f:
             content = f.read()
             text.delete(1.0, END)
             text.insert(1.0, content)
@@ -26,11 +27,12 @@ def save_file():
     try:
         name = ent.get()
         content = text.get(1.0, END)
-        with open(name, 'w') as f:
+        with open(name, "w") as f:
             f.write(content)
     except FileNotFoundError:
         text.delete(1.0, END)
-        text.insert(1.0, "Сохранить не удалось")    
+        text.insert(1.0, "Сохранить не удалось")
+
 
 root = Tk()
 

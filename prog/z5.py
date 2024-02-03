@@ -9,14 +9,16 @@
 """
 from tkinter import *
 
-def change_button(argument:str):
+
+def change_button(argument: str):
     match argument:
-        case 'up':
-            lab['text'] = '+7 9182347684'
-        case 'middle':
-            lab['text'] = '+7 9583456149'
-        case 'down':
-            lab['text'] = '+7 9084512783'
+        case "up":
+            lab["text"] = "+7 9182347684"
+        case "middle":
+            lab["text"] = "+7 9583456149"
+        case "down":
+            lab["text"] = "+7 9084512783"
+
 
 root = Tk()
 
@@ -25,11 +27,35 @@ frame.pack(side=LEFT, fill=Y)
 
 var = IntVar()
 var.set(0)
-Radiobutton(frame, text="Вася", command=lambda: change_button('up'), width=15, variable=var, value=0, indicatoron=0).pack()
-Radiobutton(frame, text="Петя", command=lambda: change_button('middle'), width=15, variable=var, value=1, indicatoron=0).pack()
-Radiobutton(frame, text="Миша", command=lambda: change_button('down'), width=15, variable=var, value=2, indicatoron=0).pack()
+Radiobutton(
+    frame,
+    text="Вася",
+    command=lambda: change_button("up"),
+    width=15,
+    variable=var,
+    value=0,
+    indicatoron=0,
+).pack()
+Radiobutton(
+    frame,
+    text="Петя",
+    command=lambda: change_button("middle"),
+    width=15,
+    variable=var,
+    value=1,
+    indicatoron=0,
+).pack()
+Radiobutton(
+    frame,
+    text="Миша",
+    command=lambda: change_button("down"),
+    width=15,
+    variable=var,
+    value=2,
+    indicatoron=0,
+).pack()
 
-lab = Label(width=30, height=5, bg='white')
+lab = Label(width=30, height=5, bg="white")
 lab.pack(side=RIGHT)
 
 root.mainloop()

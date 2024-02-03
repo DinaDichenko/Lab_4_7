@@ -7,44 +7,49 @@
 """
 from tkinter import *
 
+
 def sum_of_numbers(event):
     try:
         a = float(ent1.get())
         b = float(ent2.get())
         result = a + b
-        lab['text'] = result
+        lab["text"] = result
     except ValueError:
-        lab['text'] = "Ошибка"
+        lab["text"] = "Ошибка"
+
 
 def sub_of_numbers(event):
     try:
         a = float(ent1.get())
         b = float(ent2.get())
         result = a - b
-        lab['text'] = result
+        lab["text"] = result
     except ValueError:
-        lab['text'] = "Ошибка"
+        lab["text"] = "Ошибка"
+
 
 def mul_of_numbers(event):
     try:
         a = float(ent1.get())
         b = float(ent2.get())
         result = a * b
-        lab['text'] = result
+        lab["text"] = result
     except ValueError:
-        lab['text'] = "Ошибка"
+        lab["text"] = "Ошибка"
+
 
 def div_of_numbers(event):
     try:
         a = float(ent1.get())
         b = float(ent2.get())
         if b == 0:
-            lab['text'] = "Деление на ноль невозможно"
+            lab["text"] = "Деление на ноль невозможно"
         else:
             result = a / b
-            lab['text'] = result
+            lab["text"] = result
     except ValueError:
-        lab['text'] = "Ошибка"
+        lab["text"] = "Ошибка"
+
 
 root = Tk()
 
@@ -54,12 +59,12 @@ but1 = Button(text="+")
 but2 = Button(text="-")
 but3 = Button(text="*")
 but4 = Button(text="/")
-lab = Label(width=20, bg='black', fg='white')
+lab = Label(width=20, bg="black", fg="white")
 
-but1.bind('<Button-1>', sum_of_numbers)
-but2.bind('<Button-1>', sub_of_numbers)
-but3.bind('<Button-1>', mul_of_numbers)
-but4.bind('<Button-1>', div_of_numbers)
+but1.bind("<Button-1>", sum_of_numbers)
+but2.bind("<Button-1>", sub_of_numbers)
+but3.bind("<Button-1>", mul_of_numbers)
+but4.bind("<Button-1>", div_of_numbers)
 
 ent1.pack()
 ent2.pack()
